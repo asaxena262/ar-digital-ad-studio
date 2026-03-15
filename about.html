@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About AR Digital Ad Studio | Digital Marketing Agency Pilibhit</title>
+  <meta name="description" content="Everything about AR Digital Ad Studio — SEO, Ads, Social Media, Web Dev Pilibhit. Full-service digital marketing & web development agency.">
+  <meta name="keywords" content="about AR Digital Ad Studio, digital marketing agency Pilibhit, best digital marketing company Pilibhit">
+  <link rel="stylesheet" href="Style/style.css">
+  <link rel="stylesheet" href="Style/animations.css">
+  <link rel="stylesheet" href="Style/responsive.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "AR Digital Ad Studio",
+      "description": "Full-service digital marketing and web development agency in Pilibhit, Uttar Pradesh, India.",
+      "foundingLocation": { "@type": "Place", "name": "Pilibhit, Uttar Pradesh, India" },
+      "areaServed": ["Pilibhit", "Bareilly", "Shahjahanpur", "Rampur", "Lucknow", "Uttar Pradesh", "India"]
+    }
+  }
+  </script>
+</head>
+<body data-theme="dark">
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__spinner">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="24" r="20" stroke="rgba(255,107,53,0.2)" stroke-width="4"/>
+        <path d="M44 24c0-11.046-8.954-20-20-20" stroke="#FF6B35" stroke-width="4" stroke-linecap="round">
+          <animateTransform attributeName="transform" type="rotate" from="0 24 24" to="360 24 24" dur="0.8s" repeatCount="indefinite"/>
+        </path>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar__logo">AR<span>.</span>Studio</a>
+      <div class="navbar__links">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="services.html">Services</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i data-lucide="sun" class="theme-icon-light" style="width:18px;height:18px;display:none;"></i>
+          <i data-lucide="moon" class="theme-icon-dark" style="width:18px;height:18px;"></i>
+        </button>
+        <a href="index.html#contact" class="btn btn-primary btn-sm navbar__cta">Get Started</a>
+        <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="navbar__mobile" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="index.html#contact" class="btn btn-primary">Free Consultation</a>
+  </div>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__borders"></div>
+    <div class="hero__particles" id="heroParticles"></div>
+    <div class="hero__grid-overlay"></div>
+    <div class="hero__shapes">
+      <div class="hero__shape hero__shape--1"></div>
+      <div class="hero__shape hero__shape--2"></div>
+      <div class="hero__shape hero__shape--3"></div>
+      <div class="hero__shape hero__shape--4"></div>
+      <div class="hero__shape hero__shape--5"></div>
+    </div>
+    <div class="hero__content">
+      <a class="hero__tag" href="services.html">
+        <span class="hero__tag-dot"></span>
+        <span>About Our Agency</span>
+        <span class="hero__tag-divider"></span>
+        <i data-lucide="arrow-right" style="width:12px;height:12px;"></i>
+      </a>
+      <h1 class="hero__title">
+        Expert Digital Marketing <br>
+        & Web Development <span class="text-accent">Agency</span>
+      </h1>
+      <p class="hero__subtitle">
+        With SEO, Paid Ads & Custom Web Development, <br>
+        we grow businesses in Pilibhit and all over India
+      </p>
+      <div class="hero__buttons">
+        <a href="index.html#contact" class="btn btn-secondary btn-lg">
+          <i data-lucide="phone" style="width:16px;height:16px;margin-right:8px;"></i>
+          Book a Call
+        </a>
+        <a href="services.html" class="btn btn-primary btn-lg btn-glow">
+          Our Services
+          <span class="btn-glow__arrow">
+            <svg viewBox="0 0 16 16"><path d="M1 8h12M9 4l4 4-4 4"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== OUR STORY ===================== -->
+  <section class="section-padding" id="story">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-header__tag">Our Story</span>
+        <h2 class="section-header__title">The Birth of <span class="text-accent">AR Digital Ad Studio</span></h2>
+        <p class="section-header__desc">Established with one powerful goal: to provide world-class digital marketing solutions for businesses in Pilibhit and beyond.</p>
+      </div>
+      <div class="about-intro" data-animate="fade-up">
+        <p class="about-intro__text">
+          Across District Pilibhit and its surrounding areas, including Bareilly, Shahjahanpur, and Rampur, we saw that businesses were struggling to get online — not because they didn't have great products or services, but because they could not access expert digital marketing support.
+        </p>
+        <p class="about-intro__subtext">
+          That's where AR Digital Ad Studio comes in — to connect local businesses with the digital world. Today we cater to clients all over Pilibhit, Uttar Pradesh and India as we help them rank on Google, run profitable ad campaigns, design beautiful websites, and build their brand online.
+        </p>
+      </div>
+      <div class="mission-vision-grid" data-animate="fade-up">
+        <div class="usp-card">
+          <span class="usp-card__icon">🎯</span>
+          <h4 class="usp-card__title">Our Mission</h4>
+          <p class="usp-card__desc">To deliver authentic, results-oriented digital marketing solutions that foster actual, quantifiable growth for businesses of all sizes.</p>
+        </div>
+        <div class="usp-card">
+          <span class="usp-card__icon">🚀</span>
+          <h4 class="usp-card__title">Our Vision</h4>
+          <p class="usp-card__desc">To revolutionize the way businesses approach digital marketing by providing innovative solutions aligned with their goals, and becoming the go-to digital partner in Pilibhit and beyond.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== QUICK FACTS TABLE ===================== -->
+  <section class="section-padding" style="background:var(--clr-secondary);" id="facts">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-header__tag">Quick Facts</span>
+        <h2 class="section-header__title">AR Digital Ad Studio <span class="text-accent">At a Glance</span></h2>
+      </div>
+      <div class="table-wrapper" data-animate="fade-up" style="max-width:800px;margin:0 auto;">
+        <table class="table">
+          <thead>
+            <tr><th>Fact</th><th>Details</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Full Name</strong></td><td>AR Digital Ad Studio</td></tr>
+            <tr><td><strong>Type</strong></td><td>Full-Service Digital Marketing & Web Development Agency</td></tr>
+            <tr><td><strong>Location</strong></td><td>District Pilibhit, Uttar Pradesh, India</td></tr>
+            <tr><td><strong>Areas Served</strong></td><td>Pilibhit, Bareilly, Shahjahanpur, Rampur, Lucknow, UP, Pan India</td></tr>
+            <tr><td><strong>Services</strong></td><td>SEO, Facebook Ads, Google Ads, SMO, Web Dev, Content, Email, WhatsApp, Video, ORM</td></tr>
+            <tr><td><strong>Specialisation</strong></td><td>ROI-driven digital marketing</td></tr>
+            <tr><td><strong>Clients</strong></td><td>Local, Startup, SME, D2C, Enterprise</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHAT WE DO ===================== -->
+  <section class="section-padding" id="what-we-do">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-header__tag">What We Do</span>
+        <h2 class="section-header__title">Our <span class="text-accent">Services</span> Overview</h2>
+      </div>
+      <div class="services-grid" data-animate-stagger>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="search"></i></div>
+          <h3 class="service-card__title">SEO</h3>
+          <p class="service-card__desc">Top Google rankings and organic traffic growth.</p>
+          <a href="services.html#seo" class="service-card__link">Learn More <span>→</span></a>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="megaphone"></i></div>
+          <h3 class="service-card__title">Facebook Ads</h3>
+          <p class="service-card__desc">Targeted leads & sales campaigns.</p>
+          <a href="services.html#fb-ads" class="service-card__link">Learn More <span>→</span></a>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="mouse-pointer-click"></i></div>
+          <h3 class="service-card__title">Google Ads</h3>
+          <p class="service-card__desc">High-intent traffic and PPC management.</p>
+          <a href="services.html#google-ads" class="service-card__link">Learn More <span>→</span></a>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="share-2"></i></div>
+          <h3 class="service-card__title">SMM / SMO</h3>
+          <p class="service-card__desc">Brand presence across social platforms.</p>
+          <a href="services.html#smm" class="service-card__link">Learn More <span>→</span></a>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="code-2"></i></div>
+          <h3 class="service-card__title">Web Development</h3>
+          <p class="service-card__desc">High-converting websites and stores.</p>
+          <a href="services.html#webdev" class="service-card__link">Learn More <span>→</span></a>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="pen-tool"></i></div>
+          <h3 class="service-card__title">Content & Design</h3>
+          <p class="service-card__desc">Content marketing, branding, video and ORM.</p>
+          <a href="services.html#content" class="service-card__link">Learn More <span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHY CHOOSE US ===================== -->
+  <section class="why-us section-padding" id="why-us">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-header__tag">Why Choose Us</span>
+        <h2 class="section-header__title">Why Select <span class="text-accent">AR Digital Ad Studio</span></h2>
+      </div>
+      <div class="usp-grid" data-animate-stagger>
+        <div class="usp-card">
+          <span class="usp-card__icon">📍</span>
+          <h4 class="usp-card__title">Pilibhit Roots — Pan India Reach</h4>
+          <p class="usp-card__desc">Local knowledge combined with national standards.</p>
+        </div>
+        <div class="usp-card">
+          <span class="usp-card__icon">📊</span>
+          <h4 class="usp-card__title">Data Driven</h4>
+          <p class="usp-card__desc">Analytics-based decisions for every campaign.</p>
+        </div>
+        <div class="usp-card">
+          <span class="usp-card__icon">🔍</span>
+          <h4 class="usp-card__title">Transparent</h4>
+          <p class="usp-card__desc">Clear, honest reports every month.</p>
+        </div>
+        <div class="usp-card">
+          <span class="usp-card__icon">🎯</span>
+          <h4 class="usp-card__title">Results Focused</h4>
+          <p class="usp-card__desc">Leads, sales, and measurable ROI.</p>
+        </div>
+        <div class="usp-card">
+          <span class="usp-card__icon">🤝</span>
+          <h4 class="usp-card__title">Partnership</h4>
+          <p class="usp-card__desc">We work with you, not just for you.</p>
+        </div>
+        <div class="usp-card">
+          <span class="usp-card__icon">🔄</span>
+          <h4 class="usp-card__title">End-to-End</h4>
+          <p class="usp-card__desc">All services under one roof.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CORE VALUES ===================== -->
+  <section class="section-padding" id="values">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-header__tag">Core Values</span>
+        <h2 class="section-header__title">What <span class="text-accent">Drives</span> Us</h2>
+      </div>
+      <div class="table-wrapper" data-animate="fade-up" style="max-width:700px;margin:0 auto;">
+        <table class="table">
+          <thead><tr><th>Value</th><th>What It Means</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Results</strong></td><td>Business growth is our #1 priority</td></tr>
+            <tr><td><strong>Transparency</strong></td><td>Honest, clear reporting always</td></tr>
+            <tr><td><strong>Innovation</strong></td><td>AI + SEO + Ads — cutting edge strategies</td></tr>
+            <tr><td><strong>Partnership</strong></td><td>Long-term relationships, not one-off projects</td></tr>
+            <tr><td><strong>Learning</strong></td><td>Always updated with latest trends</td></tr>
+            <tr><td><strong>Client First</strong></td><td>We do what's best for you</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROCESS ===================== -->
+  <section class="section-padding" id="process" style="background:var(--clr-secondary);">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-header__tag">Our Process</span>
+        <h2 class="section-header__title">Growth <span class="text-accent">Partnership</span> Model</h2>
+        <p class="section-header__desc">Not project-based. Continuous improvement for lasting results.</p>
+      </div>
+      <div class="release-timeline" data-animate="fade-up">
+        <div class="release-timeline__item" data-tl-index="0">
+          <div class="release-timeline__meta">
+            <div class="release-timeline__icon-wrap">
+              <i data-lucide="ear" style="width:16px;height:16px;"></i>
+            </div>
+            <div class="release-timeline__meta-text">
+              <span class="release-timeline__step">Step 01</span>
+              <span class="release-timeline__label">Listen</span>
+            </div>
+          </div>
+          <div class="release-timeline__card">
+            <h3 class="release-timeline__title">Understand Your Goals</h3>
+            <p class="release-timeline__desc">We start by deeply understanding your business goals, challenges, target audience, and current digital presence. Every great strategy begins with listening.</p>
+            <div class="release-timeline__items">
+              <ul>
+                <li>Business goals & KPI identification</li>
+                <li>Target audience analysis</li>
+                <li>Current website & presence audit</li>
+                <li>Competitor landscape review</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="release-timeline__item" data-tl-index="1">
+          <div class="release-timeline__meta">
+            <div class="release-timeline__icon-wrap">
+              <i data-lucide="search" style="width:16px;height:16px;"></i>
+            </div>
+            <div class="release-timeline__meta-text">
+              <span class="release-timeline__step">Step 02</span>
+              <span class="release-timeline__label">Research</span>
+            </div>
+          </div>
+          <div class="release-timeline__card">
+            <h3 class="release-timeline__title">Data-Driven Research</h3>
+            <p class="release-timeline__desc">We analyse your market, competition, and opportunities to craft a strategy that's tailored specifically for your business and industry.</p>
+            <div class="release-timeline__items">
+              <ul>
+                <li>Keyword & market research</li>
+                <li>Competitor strategy analysis</li>
+                <li>Platform & channel selection</li>
+                <li>Budget & ROI forecasting</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="release-timeline__item" data-tl-index="2">
+          <div class="release-timeline__meta">
+            <div class="release-timeline__icon-wrap">
+              <i data-lucide="rocket" style="width:16px;height:16px;"></i>
+            </div>
+            <div class="release-timeline__meta-text">
+              <span class="release-timeline__step">Step 03</span>
+              <span class="release-timeline__label">Execute</span>
+            </div>
+          </div>
+          <div class="release-timeline__card">
+            <h3 class="release-timeline__title">Precision Execution</h3>
+            <p class="release-timeline__desc">Our expert team implements the strategy across all channels with precision — from SEO to ad campaigns to website builds.</p>
+            <div class="release-timeline__items">
+              <ul>
+                <li>Campaign setup & launch</li>
+                <li>Content creation & publishing</li>
+                <li>Website development & deployment</li>
+                <li>Ad creative design & targeting</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="release-timeline__item" data-tl-index="3">
+          <div class="release-timeline__meta">
+            <div class="release-timeline__icon-wrap">
+              <i data-lucide="settings" style="width:16px;height:16px;"></i>
+            </div>
+            <div class="release-timeline__meta-text">
+              <span class="release-timeline__step">Step 04</span>
+              <span class="release-timeline__label">Optimize</span>
+            </div>
+          </div>
+          <div class="release-timeline__card">
+            <h3 class="release-timeline__title">Continuous Optimization</h3>
+            <p class="release-timeline__desc">We continuously monitor, A/B test, and optimise every campaign for peak performance and maximum ROI.</p>
+            <div class="release-timeline__items">
+              <ul>
+                <li>Performance monitoring & alerts</li>
+                <li>A/B testing & conversion optimization</li>
+                <li>Bid & budget adjustments</li>
+                <li>Content & keyword refinements</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="release-timeline__item" data-tl-index="4">
+          <div class="release-timeline__meta">
+            <div class="release-timeline__icon-wrap">
+              <i data-lucide="bar-chart-2" style="width:16px;height:16px;"></i>
+            </div>
+            <div class="release-timeline__meta-text">
+              <span class="release-timeline__step">Step 05</span>
+              <span class="release-timeline__label">Report</span>
+            </div>
+          </div>
+          <div class="release-timeline__card">
+            <h3 class="release-timeline__title">Transparent Reporting</h3>
+            <p class="release-timeline__desc">Detailed monthly reports with clear metrics, actionable insights, and growth recommendations. Full transparency, always.</p>
+            <div class="release-timeline__items">
+              <ul>
+                <li>Monthly performance dashboards</li>
+                <li>ROI & conversion tracking</li>
+                <li>Strategic recommendations</li>
+                <li>Next-month action plan</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TEAM ===================== -->
+  <section class="section-padding" id="team">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-header__tag">Our Team</span>
+        <h2 class="section-header__title">Experts Behind <span class="text-accent">Your Growth</span></h2>
+        <p class="section-header__desc">Our team is always updated with Google updates, Meta updates, AI trends, and SEO trends.</p>
+      </div>
+      <div class="usp-grid" data-animate-stagger>
+        <div class="usp-card"><span class="usp-card__icon">🔍</span><h4 class="usp-card__title">SEO Specialists</h4></div>
+        <div class="usp-card"><span class="usp-card__icon">📣</span><h4 class="usp-card__title">Ads Managers</h4></div>
+        <div class="usp-card"><span class="usp-card__icon">📱</span><h4 class="usp-card__title">Social Media Experts</h4></div>
+        <div class="usp-card"><span class="usp-card__icon">💻</span><h4 class="usp-card__title">Developers</h4></div>
+        <div class="usp-card"><span class="usp-card__icon">✍️</span><h4 class="usp-card__title">Content Writers</h4></div>
+        <div class="usp-card"><span class="usp-card__icon">🎨</span><h4 class="usp-card__title">Designers</h4></div>
+        <div class="usp-card"><span class="usp-card__icon">🎬</span><h4 class="usp-card__title">Video Editors</h4></div>
+        <div class="usp-card"><span class="usp-card__icon">📈</span><h4 class="usp-card__title">Analysts</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LOCATIONS ===================== -->
+  <section class="section-padding" id="locations" style="background:var(--clr-secondary);">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-header__tag">Our Reach</span>
+        <h2 class="section-header__title">Locations We <span class="text-accent">Serve</span></h2>
+      </div>
+      <div class="table-wrapper" data-animate="fade-up" style="max-width:600px;margin:0 auto;">
+        <table class="table">
+          <thead><tr><th>Location</th><th>Service Type</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Pilibhit</strong></td><td>Headquarters — Full Services</td></tr>
+            <tr><td><strong>Bareilly</strong></td><td>SEO / Ads</td></tr>
+            <tr><td><strong>Shahjahanpur</strong></td><td>Marketing</td></tr>
+            <tr><td><strong>Rampur</strong></td><td>PPC</td></tr>
+            <tr><td><strong>Lucknow</strong></td><td>Full Services</td></tr>
+            <tr><td><strong>Uttar Pradesh</strong></td><td>Remote</td></tr>
+            <tr><td><strong>All India</strong></td><td>Remote</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="cta-banner section-padding" id="cta">
+    <div class="container">
+      <h2 class="cta-banner__title">Let's Build Something <span class="gradient-text">Great Together</span></h2>
+      <p class="cta-banner__desc">Get a free consultation and discover how AR Digital Ad Studio can transform your digital presence.</p>
+      <div class="cta-banner__buttons">
+        <a href="index.html#contact" class="btn btn-primary btn-lg btn-glow">Free Consultation
+          <span class="btn-glow__arrow">
+            <svg viewBox="0 0 16 16"><path d="M1 8h12M9 4l4 4-4 4"/></svg>
+          </span>
+        </a>
+        <a href="tel:+91XXXXXXXXXX" class="btn btn-secondary btn-lg">
+          <i data-lucide="phone" style="width:18px;height:18px;"></i> Call Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="navbar__logo" style="margin-bottom:var(--space-md);">AR<span>.</span>Studio</a>
+          <p>AR Digital Ad Studio — #1 Digital Marketing Agency in Pilibhit. SEO | PPC | SMM | Web Development | Content Marketing.</p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social-link" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+            <a href="#" class="footer__social-link" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+            <a href="#" class="footer__social-link" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+            <a href="#" class="footer__social-link" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+            <a href="#" class="footer__social-link" aria-label="X/Twitter"><i data-lucide="twitter"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Quick Links</h4>
+          <div class="footer__links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="index.html#contact">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Services</h4>
+          <div class="footer__links">
+            <a href="services.html#seo">SEO</a>
+            <a href="services.html#smm">Social Media</a>
+            <a href="services.html#fb-ads">Facebook Ads</a>
+            <a href="services.html#google-ads">Google Ads</a>
+            <a href="services.html#webdev">Web Development</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Contact</h4>
+          <div class="footer__contact-item">
+            <i data-lucide="map-pin" style="width:16px;height:16px;flex-shrink:0;"></i>
+            <span>Distt Pilibhit, Uttar Pradesh, India</span>
+          </div>
+          <div class="footer__contact-item">
+            <i data-lucide="phone" style="width:16px;height:16px;flex-shrink:0;"></i>
+            <span>+91 XXXXX XXXXX</span>
+          </div>
+          <div class="footer__contact-item">
+            <i data-lucide="mail" style="width:16px;height:16px;flex-shrink:0;"></i>
+            <span>info@ardigitaladstudio.com</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__newsletter">
+        <h4>Stay Updated</h4>
+        <p>Get the latest digital marketing tips & insights delivered to your inbox.</p>
+        <form class="footer__newsletter-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Subscribed!'; this.querySelector('input').value='';">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 AR Digital Ad Studio. All rights reserved.</p>
+        <div class="footer__bottom-links">
+          <span>Serving: Pilibhit | Bareilly | Shahjahanpur | Rampur | Lucknow | UP | India</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <span class="whatsapp-float__pulse"></span>
+    <i data-lucide="message-circle" style="width:28px;height:28px;"></i>
+  </a>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i data-lucide="chevron-up" style="width:20px;height:20px;"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO Ads Web Dev | Digital Marketing Services in Pilibhit</title>
+  <meta name="description" content="Digital marketing services Pilibhit — SEO, Facebook Ads, Google Ads, PPC, Web development. Free consultation from AR Digital Ad Studio.">
+  <meta name="keywords" content="SEO services Pilibhit, Facebook ads Pilibhit, Google ads Pilibhit, Web development Pilibhit, online marketing Pilibhit">
+  <link rel="stylesheet" href="Style/style.css">
+  <link rel="stylesheet" href="Style/animations.css">
+  <link rel="stylesheet" href="Style/responsive.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "provider": {
+      "@type": "Organization",
+      "name": "AR Digital Ad Studio"
+    },
+    "areaServed": ["Pilibhit", "Bareilly", "Shahjahanpur", "Rampur", "Lucknow", "Uttar Pradesh", "India"],
+    "serviceType": ["SEO", "Facebook Ads", "Google Ads", "PPC", "Web Development", "Social Media Marketing"]
+  }
+  </script>
+</head>
+<body data-theme="dark">
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__spinner">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="24" r="20" stroke="rgba(255,107,53,0.2)" stroke-width="4"/>
+        <path d="M44 24c0-11.046-8.954-20-20-20" stroke="#FF6B35" stroke-width="4" stroke-linecap="round">
+          <animateTransform attributeName="transform" type="rotate" from="0 24 24" to="360 24 24" dur="0.8s" repeatCount="indefinite"/>
+        </path>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar__logo">AR<span>.</span>Studio</a>
+      <div class="navbar__links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i data-lucide="sun" class="theme-icon-light" style="width:18px;height:18px;display:none;"></i>
+          <i data-lucide="moon" class="theme-icon-dark" style="width:18px;height:18px;"></i>
+        </button>
+        <a href="index.html#contact" class="btn btn-primary btn-sm navbar__cta">Get Started</a>
+        <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="navbar__mobile" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="index.html#contact" class="btn btn-primary">Free Consultation</a>
+  </div>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__borders"></div>
+    <div class="hero__particles" id="heroParticles"></div>
+    <div class="hero__grid-overlay"></div>
+    <div class="hero__shapes">
+      <div class="hero__shape hero__shape--1"></div>
+      <div class="hero__shape hero__shape--2"></div>
+      <div class="hero__shape hero__shape--3"></div>
+      <div class="hero__shape hero__shape--4"></div>
+      <div class="hero__shape hero__shape--5"></div>
+    </div>
+    <div class="hero__content">
+      <a class="hero__tag" href="#overview">
+        <span class="hero__tag-dot"></span>
+        <span>Full-Service Agency</span>
+        <span class="hero__tag-divider"></span>
+        <i data-lucide="arrow-right" style="width:12px;height:12px;"></i>
+      </a>
+      <h1 class="hero__title">
+        Digital Marketing <br>
+        & Web Development <span class="text-accent">Services</span>
+      </h1>
+      <p class="hero__subtitle">
+        SEO & Social Media, Facebook Ads, Google Ads, <br>
+        Custom Web Development — Full Funnel Growth
+      </p>
+      <div class="hero__buttons">
+        <a href="index.html#contact" class="btn btn-secondary btn-lg">
+          <i data-lucide="phone" style="width:16px;height:16px;margin-right:8px;"></i>
+          Book a Call
+        </a>
+        <a href="index.html#contact" class="btn btn-primary btn-lg btn-glow">
+          Get Started
+          <span class="btn-glow__arrow">
+            <svg viewBox="0 0 16 16"><path d="M1 8h12M9 4l4 4-4 4"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TOOLS & PLATFORMS MARQUEE ===================== -->
+  <section class="tools-marquee">
+    <p class="tools-marquee__label">Tools & Platforms We Master</p>
+    <div class="tools-marquee__track">
+      <div class="tools-marquee__item"><i data-lucide="search" class="tools-marquee__item-icon"></i><span class="tools-marquee__item-name">Google Search Console</span></div>
+      <div class="tools-marquee__item"><i data-lucide="bar-chart-2" class="tools-marquee__item-icon"></i><span class="tools-marquee__item-name">Google Analytics</span></div>
+      <div class="tools-marquee__item"><i data-lucide="megaphone" class="tools-marquee__item-icon"></i><span class="tools-marquee__item-name">Meta Ads Manager</span></div>
+      <div class="tools-marquee__item"><i data-lucide="mouse-pointer-click" class="tools-marquee__item-icon"></i><span class="tools-marquee__item-name">Google Ads</span></div>
+      <div class="tools-marquee__item"><i data-lucide="code-2" class="tools-marquee__item-icon"></i><span class="tools-marquee__item-name">WordPress</span></div>
+      <div class="tools-marquee__item"><i data-lucide="shopping-cart" class="tools-marquee__item-icon"></i><span class="tools-marquee__item-name">Shopify</span></div>
+      <div class="tools-marquee__item"><i data-lucide="mail" class="tools-marquee__item-icon"></i><span class="tools-marquee__item-name">Mailchimp</span></div>
+      <div class="tools-marquee__item"><i data-lucide="share-2" class="tools-marquee__item-icon"></i><span class="tools-marquee__item-name">Buffer</span></div>
+      <div class="tools-marquee__item"><i data-lucide="palette" class="tools-marquee__item-icon"></i><span class="tools-marquee__item-name">Canva</span></div>
+      <div class="tools-marquee__item"><i data-lucide="bot" class="tools-marquee__item-icon"></i><span class="tools-marquee__item-name">SEMrush</span></div>
+      <!-- Duplicate set for seamless loop -->
+      <div class="tools-marquee__item"><i data-lucide="search" class="tools-marquee__item-icon"></i><span class="tools-marquee__item-name">Google Search Console</span></div>
+      <div class="tools-marquee__item"><i data-lucide="bar-chart-2" class="tools-marquee__item-icon"></i><span class="tools-marquee__item-name">Google Analytics</span></div>
+      <div class="tools-marquee__item"><i data-lucide="megaphone" class="tools-marquee__item-icon"></i><span class="tools-marquee__item-name">Meta Ads Manager</span></div>
+      <div class="tools-marquee__item"><i data-lucide="mouse-pointer-click" class="tools-marquee__item-icon"></i><span class="tools-marquee__item-name">Google Ads</span></div>
+      <div class="tools-marquee__item"><i data-lucide="code-2" class="tools-marquee__item-icon"></i><span class="tools-marquee__item-name">WordPress</span></div>
+      <div class="tools-marquee__item"><i data-lucide="shopping-cart" class="tools-marquee__item-icon"></i><span class="tools-marquee__item-name">Shopify</span></div>
+      <div class="tools-marquee__item"><i data-lucide="mail" class="tools-marquee__item-icon"></i><span class="tools-marquee__item-name">Mailchimp</span></div>
+      <div class="tools-marquee__item"><i data-lucide="share-2" class="tools-marquee__item-icon"></i><span class="tools-marquee__item-name">Buffer</span></div>
+      <div class="tools-marquee__item"><i data-lucide="palette" class="tools-marquee__item-icon"></i><span class="tools-marquee__item-name">Canva</span></div>
+      <div class="tools-marquee__item"><i data-lucide="bot" class="tools-marquee__item-icon"></i><span class="tools-marquee__item-name">SEMrush</span></div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES OVERVIEW TABLE ===================== -->
+  <section class="section-padding" id="overview">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-header__tag">At a Glance</span>
+        <h2 class="section-header__title">Our Services <span class="text-accent">Overview</span></h2>
+        <p class="section-header__desc">Full-service digital marketing and web development. Everything your business needs to grow online.</p>
+      </div>
+      <div class="table-wrapper" data-animate="fade-up">
+        <table class="table">
+          <thead>
+            <tr><th>Service</th><th>What You Get</th><th>Best For</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>🔍 SEO</strong></td><td>More Google rankings & organic traffic</td><td>Long-term growth & brand authority</td></tr>
+            <tr><td><strong>📱 Social Media</strong></td><td>Engaging content & brand visibility</td><td>Brand awareness & audience engagement</td></tr>
+            <tr><td><strong>📣 Facebook & Instagram Ads</strong></td><td>Targeted lead gen and sales campaigns</td><td>Quick leads, e-commerce sales, local footfall</td></tr>
+            <tr><td><strong>🖱️ Google Ads (PPC)</strong></td><td>Top-of-search placement & intent-driven traffic</td><td>Immediate visibility & high-intent leads</td></tr>
+            <tr><td><strong>💻 Web Development</strong></td><td>Websites on WordPress & Shopify</td><td>Online presence, e-commerce, lead capture</td></tr>
+            <tr><td><strong>✍️ Content Marketing</strong></td><td>Blog articles & SEO content strategy</td><td>Thought leadership & organic traffic</td></tr>
+            <tr><td><strong>📧 Email & WhatsApp</strong></td><td>Automated campaigns & newsletters</td><td>Customer retention & repeat sales</td></tr>
+            <tr><td><strong>🎨 Graphic Design</strong></td><td>Branding kits & creatives</td><td>Professional brand identity</td></tr>
+            <tr><td><strong>🎬 Video Marketing</strong></td><td>Reels & promotional videos</td><td>Engagement & storytelling</td></tr>
+            <tr><td><strong>⭐ ORM</strong></td><td>Reviews & reputation management</td><td>Trust building</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SEO SECTION ===================== -->
+  <section class="section-padding" id="seo" style="background:var(--clr-secondary);">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-header__tag">SEO Services</span>
+        <h2 class="section-header__title">Search Engine <span class="text-accent">Optimization</span></h2>
+        <p class="section-header__desc">Optimize your website to rank higher on Google. Let potential customers find you without paying for ads.</p>
+      </div>
+      <div class="services-grid" data-animate-stagger>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="file-text"></i></div>
+          <h3 class="service-card__title">On-Page SEO</h3>
+          <p class="service-card__desc">Keyword research, meta tags, header optimization, internal linking, content strategy & featured snippet optimization.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="link"></i></div>
+          <h3 class="service-card__title">Off-Page SEO</h3>
+          <p class="service-card__desc">Quality backlinks, directory submission, guest posting, digital PR, social bookmarking & competitor analysis.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="settings"></i></div>
+          <h3 class="service-card__title">Technical SEO</h3>
+          <p class="service-card__desc">Core Web Vitals, mobile-first indexing, sitemap, robots.txt, schema markup, HTTPS & crawl fixes.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="map-pin"></i></div>
+          <h3 class="service-card__title">Local SEO</h3>
+          <p class="service-card__desc">Google Business Profile, citations (JustDial, Sulekha), NAP consistency, local keywords & reviews management.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="shopping-cart"></i></div>
+          <h3 class="service-card__title">E-Commerce SEO</h3>
+          <p class="service-card__desc">Product page SEO, category SEO, schema markup, duplicate content fixes & Shopify/WooCommerce optimization.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="bot"></i></div>
+          <h3 class="service-card__title">AEO & GEO</h3>
+          <p class="service-card__desc">Answer Engine Optimization — structured content for Google Featured Snippets, voice assistants & AI search engines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SOCIAL MEDIA SECTION ===================== -->
+  <section class="section-padding" id="smm">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-header__tag">Social Media</span>
+        <h2 class="section-header__title">Social Media <span class="text-accent">Marketing & Optimization</span></h2>
+        <p class="section-header__desc">Build a loyal following. Create a brand people remember.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-2xl);max-width:900px;margin:0 auto;" data-animate="fade-up">
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="users"></i></div>
+          <h3 class="service-card__title">Social Media Management (SMM)</h3>
+          <p class="service-card__desc">Content calendar planning, post design & copywriting, community management, and monthly analytics & reports.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="trending-up"></i></div>
+          <h3 class="service-card__title">Social Media Optimization (SMO)</h3>
+          <p class="service-card__desc">Profile optimization, hashtag strategy, audience targeting, brand consistency & content repurposing across platforms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FACEBOOK ADS ===================== -->
+  <section class="section-padding" id="fb-ads" style="background:var(--clr-secondary);">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-header__tag">Paid Ads</span>
+        <h2 class="section-header__title">Facebook & Instagram <span class="text-accent">Ads Services</span></h2>
+        <p class="section-header__desc">Every rupee that you spend is optimised for maximum return.</p>
+      </div>
+      <div class="usp-grid" data-animate-stagger style="margin-bottom:var(--space-2xl);">
+        <div class="usp-card"><span class="usp-card__icon">🎯</span><h4 class="usp-card__title">Lead Generation</h4><p class="usp-card__desc">Targeted campaigns for qualified leads.</p></div>
+        <div class="usp-card"><span class="usp-card__icon">📢</span><h4 class="usp-card__title">Brand Awareness</h4><p class="usp-card__desc">Reach new audiences at scale.</p></div>
+        <div class="usp-card"><span class="usp-card__icon">🔄</span><h4 class="usp-card__title">Retargeting</h4><p class="usp-card__desc">Re-engage visitors who didn't convert.</p></div>
+        <div class="usp-card"><span class="usp-card__icon">👥</span><h4 class="usp-card__title">Lookalike Audiences</h4><p class="usp-card__desc">Find customers similar to your best ones.</p></div>
+        <div class="usp-card"><span class="usp-card__icon">🛍️</span><h4 class="usp-card__title">E-Commerce Ads</h4><p class="usp-card__desc">Drive sales and orders online.</p></div>
+        <div class="usp-card"><span class="usp-card__icon">📊</span><h4 class="usp-card__title">ROAS Tracking</h4><p class="usp-card__desc">A/B testing & ROI optimization.</p></div>
+      </div>
+      <div class="table-wrapper" data-animate="fade-up" style="max-width:700px;margin:0 auto;">
+        <table class="table">
+          <thead><tr><th>Objective</th><th>Best For</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>Lead Gen</td><td>Services</td><td>Calls & Enquiries</td></tr>
+            <tr><td>Awareness</td><td>New Brands</td><td>Reach & Impressions</td></tr>
+            <tr><td>Sales</td><td>E-Commerce</td><td>Orders & Revenue</td></tr>
+            <tr><td>Traffic</td><td>Blogs & Landing Pages</td><td>Website Visits</td></tr>
+            <tr><td>Retargeting</td><td>All Businesses</td><td>Higher Conversions</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GOOGLE ADS ===================== -->
+  <section class="section-padding" id="google-ads">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-header__tag">PPC</span>
+        <h2 class="section-header__title">Google Ads <span class="text-accent">PPC Services</span></h2>
+        <p class="section-header__desc">High-intent traffic, fast leads. Maximum return on every rupee.</p>
+      </div>
+      <div class="services-grid" data-animate-stagger>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="search"></i></div>
+          <h3 class="service-card__title">Search Ads</h3>
+          <p class="service-card__desc">Appear at the top of Google when customers search for your services.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="monitor"></i></div>
+          <h3 class="service-card__title">Display Ads</h3>
+          <p class="service-card__desc">Visual banner ads across millions of websites in the Google Display Network.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="shopping-bag"></i></div>
+          <h3 class="service-card__title">Shopping Ads</h3>
+          <p class="service-card__desc">Product listings with images, prices, and reviews directly in search results.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="play-circle"></i></div>
+          <h3 class="service-card__title">YouTube Ads</h3>
+          <p class="service-card__desc">Video advertising on the world's second largest search engine.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="repeat"></i></div>
+          <h3 class="service-card__title">Remarketing</h3>
+          <p class="service-card__desc">Re-engage visitors with targeted ads as they browse the web.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="bar-chart-2"></i></div>
+          <h3 class="service-card__title">Analytics & Optimization</h3>
+          <p class="service-card__desc">Keyword research, bid strategy, conversion tracking & continuous optimization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WEB DEVELOPMENT ===================== -->
+  <section class="section-padding" id="webdev" style="background:var(--clr-secondary);">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-header__tag">Web Development</span>
+        <h2 class="section-header__title">Website <span class="text-accent">Development</span> Services</h2>
+        <p class="section-header__desc">We build websites that work as hard as your business does.</p>
+      </div>
+      <div class="table-wrapper" data-animate="fade-up" style="max-width:800px;margin:0 auto;margin-bottom:var(--space-2xl);">
+        <table class="table">
+          <thead><tr><th>Service</th><th>What's Included</th><th>Ideal For</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Custom Website</strong></td><td>UI/UX, responsive design</td><td>Businesses</td></tr>
+            <tr><td><strong>WordPress</strong></td><td>Plugins, SEO-friendly</td><td>Blogs & Business Sites</td></tr>
+            <tr><td><strong>Shopify</strong></td><td>Store setup, product pages</td><td>E-Commerce</td></tr>
+            <tr><td><strong>Landing Page</strong></td><td>Conversion funnel</td><td>Ads & Campaigns</td></tr>
+            <tr><td><strong>Redesign</strong></td><td>Speed & UX improvements</td><td>Existing Websites</td></tr>
+            <tr><td><strong>Maintenance</strong></td><td>Backup, security, updates</td><td>All Websites</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div data-animate="fade-up" style="max-width:800px;margin:0 auto;">
+        <h3 style="font-size:var(--fs-xl);margin-bottom:var(--space-lg);text-align:center;">Every Website Includes</h3>
+        <div class="usp-grid">
+          <div class="usp-card"><span class="usp-card__icon">📱</span><h4 class="usp-card__title">Responsive</h4></div>
+          <div class="usp-card"><span class="usp-card__icon">🔍</span><h4 class="usp-card__title">SEO Structure</h4></div>
+          <div class="usp-card"><span class="usp-card__icon">🔒</span><h4 class="usp-card__title">SSL Security</h4></div>
+          <div class="usp-card"><span class="usp-card__icon">📝</span><h4 class="usp-card__title">Contact Forms</h4></div>
+          <div class="usp-card"><span class="usp-card__icon">📈</span><h4 class="usp-card__title">Analytics</h4></div>
+          <div class="usp-card"><span class="usp-card__icon">⚡</span><h4 class="usp-card__title">Core Web Vitals</h4></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ADDITIONAL SERVICES ===================== -->
+  <section class="section-padding" id="content">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-header__tag">More Services</span>
+        <h2 class="section-header__title">Additional <span class="text-accent">Services</span></h2>
+      </div>
+      <div class="services-grid" data-animate-stagger>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="book-open"></i></div>
+          <h3 class="service-card__title">Content Marketing</h3>
+          <p class="service-card__desc">Blog writing, long-form articles, topic clusters, editorial calendar, content repurposing & GEO-optimized content.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="mail"></i></div>
+          <h3 class="service-card__title">Email Marketing</h3>
+          <p class="service-card__desc">Newsletters, automation sequences, list segmentation, A/B testing & performance tracking.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="message-circle"></i></div>
+          <h3 class="service-card__title">WhatsApp Marketing</h3>
+          <p class="service-card__desc">WhatsApp API, broadcast messages, product catalogue, chatbot & automated follow-ups.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="video"></i></div>
+          <h3 class="service-card__title">Video Marketing</h3>
+          <p class="service-card__desc">Reels, Shorts, explainer videos, promotional content & YouTube SEO optimization.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="palette"></i></div>
+          <h3 class="service-card__title">Graphic Design</h3>
+          <p class="service-card__desc">Logo design, branding kit, social media posts, flyers, presentations & ad creatives.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="shield"></i></div>
+          <h3 class="service-card__title">Online Reputation (ORM)</h3>
+          <p class="service-card__desc">Reviews management, monitoring, response, SEO repair, positive promotion & crisis management.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section class="section-padding" id="faq" style="background:var(--clr-secondary);">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <span class="section-header__tag">FAQ</span>
+        <h2 class="section-header__title">Services <span class="text-accent">FAQ</span></h2>
+      </div>
+      <div class="accordion" data-animate="fade-up">
+        <div class="accordion__item">
+          <button class="accordion__trigger">What services does AR Digital Ad Studio offer? <span class="accordion__icon"></span></button>
+          <div class="accordion__content"><p>We offer SEO, Social Media Marketing, Facebook & Instagram Ads, Google Ads (PPC), Web Development, Content Marketing, Email & WhatsApp Marketing, Video Marketing, Graphic Design, and Online Reputation Management.</p></div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__trigger">How much does digital marketing cost? <span class="accordion__icon"></span></button>
+          <div class="accordion__content"><p>Costs depend on the services, scope, and goals. We offer flexible packages from affordable plans for small businesses to enterprise solutions. Contact us for a free consultation and customized quote.</p></div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__trigger">How long does SEO take to show results? <span class="accordion__icon"></span></button>
+          <div class="accordion__content"><p>SEO is a long-term strategy. Most businesses see significant improvements in 3-6 months, with ongoing growth over time. We provide monthly progress reports to track your rankings and traffic.</p></div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__trigger">Can I run SEO and Ads together? <span class="accordion__icon"></span></button>
+          <div class="accordion__content"><p>Absolutely! In fact, combining SEO and paid ads creates the best results. SEO provides long-term organic growth while ads deliver immediate traffic and leads.</p></div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__trigger">Can you build an e-commerce website? <span class="accordion__icon"></span></button>
+          <div class="accordion__content"><p>Yes! We build e-commerce stores on Shopify, WooCommerce (WordPress), and custom platforms. Every store includes responsive design, SEO structure, SSL, payment integration, and analytics.</p></div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__trigger">Do you provide monthly reports? <span class="accordion__icon"></span></button>
+          <div class="accordion__content"><p>Yes, transparency is one of our core values. We provide detailed monthly reports covering all metrics, progress, insights, and recommendations for your campaigns.</p></div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__trigger">Can I choose a standalone service? <span class="accordion__icon"></span></button>
+          <div class="accordion__content"><p>Yes, you can choose individual services like SEO only, ads only, or web development only. We also offer bundled packages for better value.</p></div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__trigger">Do you work outside Pilibhit? <span class="accordion__icon"></span></button>
+          <div class="accordion__content"><p>Yes! While headquartered in Pilibhit, we serve clients across Bareilly, Shahjahanpur, Rampur, Lucknow, all of Uttar Pradesh, and the rest of India remotely.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="cta-banner section-padding" id="cta">
+    <div class="container">
+      <h2 class="cta-banner__title">Ready to Grow <span class="gradient-text">Your Business?</span></h2>
+      <p class="cta-banner__desc">Get a free consultation and discover the perfect digital marketing strategy for your business.</p>
+      <div class="cta-banner__buttons">
+        <a href="index.html#contact" class="btn btn-accent btn-lg btn-glow">Get Free Consultation
+          <span class="btn-glow__arrow">
+            <svg viewBox="0 0 16 16"><path d="M1 8h12M9 4l4 4-4 4"/></svg>
+          </span>
+        </a>
+        <a href="tel:+91XXXXXXXXXX" class="btn btn-secondary btn-lg">
+          <i data-lucide="phone" style="width:18px;height:18px;"></i> Call Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="navbar__logo" style="margin-bottom:var(--space-md);">AR<span>.</span>Studio</a>
+          <p>AR Digital Ad Studio — #1 Digital Marketing Agency in Pilibhit. SEO | PPC | SMM | Web Development | Content Marketing.</p>
+          <div class="footer__socials">
+            <a href="#" class="footer__social-link" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+            <a href="#" class="footer__social-link" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+            <a href="#" class="footer__social-link" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+            <a href="#" class="footer__social-link" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+            <a href="#" class="footer__social-link" aria-label="X/Twitter"><i data-lucide="twitter"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Quick Links</h4>
+          <div class="footer__links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="index.html#contact">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Services</h4>
+          <div class="footer__links">
+            <a href="#seo">SEO</a>
+            <a href="#smm">Social Media</a>
+            <a href="#fb-ads">Facebook Ads</a>
+            <a href="#google-ads">Google Ads</a>
+            <a href="#webdev">Web Development</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Contact</h4>
+          <div class="footer__contact-item">
+            <i data-lucide="map-pin" style="width:16px;height:16px;flex-shrink:0;"></i>
+            <span>Distt Pilibhit, Uttar Pradesh, India</span>
+          </div>
+          <div class="footer__contact-item">
+            <i data-lucide="phone" style="width:16px;height:16px;flex-shrink:0;"></i>
+            <span>+91 XXXXX XXXXX</span>
+          </div>
+          <div class="footer__contact-item">
+            <i data-lucide="mail" style="width:16px;height:16px;flex-shrink:0;"></i>
+            <span>info@ardigitaladstudio.com</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__newsletter">
+        <h4>Stay Updated</h4>
+        <p>Get the latest digital marketing tips & insights delivered to your inbox.</p>
+        <form class="footer__newsletter-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Subscribed!'; this.querySelector('input').value='';">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 AR Digital Ad Studio. All rights reserved.</p>
+        <div class="footer__bottom-links">
+          <span>Serving: Pilibhit | Bareilly | Shahjahanpur | Rampur | Lucknow | UP | India</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <span class="whatsapp-float__pulse"></span>
+    <i data-lucide="message-circle" style="width:28px;height:28px;"></i>
+  </a>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i data-lucide="chevron-up" style="width:20px;height:20px;"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

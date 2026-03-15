@@ -1,0 +1,292 @@
+You are given a task to integrate an existing React component in the codebase
+
+The codebase should support:
+- shadcn project structure  
+- Tailwind CSS
+- Typescript
+
+If it doesn't, provide instructions on how to setup project via shadcn CLI, install Tailwind or Typescript.
+
+Determine the default path for components and styles. 
+If default path for components is not /components/ui, provide instructions on why it's important to create this folder
+Copy-paste this component to /components/ui folder:
+```tsx
+contact-2.tsx
+import React from "react";
+
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+
+interface Contact2Props {
+  title?: string;
+  description?: string;
+  phone?: string;
+  email?: string;
+  web?: { label: string; url: string };
+}
+
+export const Contact2 = ({
+  title = "Contact Us",
+  description = "We are available for questions, feedback, or collaboration opportunities. Let us know how we can help!",
+  phone = "(123) 34567890",
+  email = "email@example.com",
+  web = { label: "shadcnblocks.com", url: "https://shadcnblocks.com" },
+}: Contact2Props) => {
+  return (
+    <section className="py-32">
+      <div className="container">
+        <div className="mx-auto flex max-w-screen-xl flex-col justify-between gap-10 lg:flex-row lg:gap-20">
+          <div className="mx-auto flex max-w-sm flex-col justify-between gap-10">
+            <div className="text-center lg:text-left">
+              <h1 className="mb-2 text-5xl font-semibold lg:mb-1 lg:text-6xl">
+                {title}
+              </h1>
+              <p className="text-muted-foreground">{description}</p>
+            </div>
+            <div className="mx-auto w-fit lg:mx-0">
+              <h3 className="mb-6 text-center text-2xl font-semibold lg:text-left">
+                Contact Details
+              </h3>
+              <ul className="ml-4 list-disc">
+                <li>
+                  <span className="font-bold">Phone: </span>
+                  {phone}
+                </li>
+                <li>
+                  <span className="font-bold">Email: </span>
+                  <a href={`mailto:${email}`} className="underline">
+                    {email}
+                  </a>
+                </li>
+                <li>
+                  <span className="font-bold">Web: </span>
+                  <a href={web.url} target="_blank" className="underline">
+                    {web.label}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="mx-auto flex max-w-screen-md flex-col gap-6 rounded-lg border p-10">
+            <div className="flex gap-4">
+              <div className="grid w-full items-center gap-1.5">
+                <Label htmlFor="firstname">First Name</Label>
+                <Input type="text" id="firstname" placeholder="First Name" />
+              </div>
+              <div className="grid w-full items-center gap-1.5">
+                <Label htmlFor="lastname">Last Name</Label>
+                <Input type="text" id="lastname" placeholder="Last Name" />
+              </div>
+            </div>
+            <div className="grid w-full items-center gap-1.5">
+              <Label htmlFor="email">Email</Label>
+              <Input type="email" id="email" placeholder="Email" />
+            </div>
+            <div className="grid w-full items-center gap-1.5">
+              <Label htmlFor="subject">Subject</Label>
+              <Input type="text" id="subject" placeholder="Subject" />
+            </div>
+            <div className="grid w-full gap-1.5">
+              <Label htmlFor="message">Message</Label>
+              <Textarea placeholder="Type your message here." id="message" />
+            </div>
+            <Button className="w-full">Send Message</Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+
+demo.tsx
+import { Contact2 } from "@/components/ui/contact-2";
+
+const DemoOne = () => {
+  return (
+    <Contact2 
+      title="Contact Us"
+      description="We are available for questions, feedback, or collaboration opportunities. Let us know how we can help!"
+      phone="(123) 34567890"
+      email="email@example.com"
+      web={{ label: "shadcnblocks.com", url: "https://shadcnblocks.com" }}
+    />
+  );
+};
+
+export { DemoOne };
+
+```
+
+Copy-paste these files for dependencies:
+```tsx
+shadcn/button
+import * as React from "react"
+import { Slot } from "@radix-ui/react-slot"
+import { cva, type VariantProps } from "class-variance-authority"
+
+import { cn } from "@/lib/utils"
+
+const buttonVariants = cva(
+  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        destructive:
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        outline:
+          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        secondary:
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
+        link: "text-primary underline-offset-4 hover:underline",
+      },
+      size: {
+        default: "h-10 px-4 py-2",
+        sm: "h-9 rounded-md px-3",
+        lg: "h-11 rounded-md px-8",
+        icon: "h-10 w-10",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  },
+)
+
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean
+}
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button"
+    return (
+      <Comp
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
+        {...props}
+      />
+    )
+  },
+)
+Button.displayName = "Button"
+
+export { Button, buttonVariants }
+
+```
+```tsx
+shadcn/textarea
+import * as React from "react"
+
+import { cn } from "@/lib/utils"
+
+export interface TextareaProps
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
+
+const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
+  ({ className, ...props }, ref) => {
+    return (
+      <textarea
+        className={cn(
+          "flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+          className
+        )}
+        ref={ref}
+        {...props}
+      />
+    )
+  }
+)
+Textarea.displayName = "Textarea"
+
+export { Textarea }
+
+```
+```tsx
+shadcn/input
+import * as React from "react"
+
+import { cn } from "@/lib/utils"
+
+export interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {}
+
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ className, type, ...props }, ref) => {
+    return (
+      <input
+        type={type}
+        className={cn(
+          "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+          className
+        )}
+        ref={ref}
+        {...props}
+      />
+    )
+  }
+)
+Input.displayName = "Input"
+
+export { Input }
+
+```
+```tsx
+shadcn/label
+"use client"
+
+import * as React from "react"
+import * as LabelPrimitive from "@radix-ui/react-label"
+import { cva, type VariantProps } from "class-variance-authority"
+
+import { cn } from "@/lib/utils"
+
+const labelVariants = cva(
+  "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
+)
+
+const Label = React.forwardRef<
+  React.ElementRef<typeof LabelPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> &
+    VariantProps<typeof labelVariants>
+>(({ className, ...props }, ref) => (
+  <LabelPrimitive.Root
+    ref={ref}
+    className={cn(labelVariants(), className)}
+    {...props}
+  />
+))
+Label.displayName = LabelPrimitive.Root.displayName
+
+export { Label }
+
+```
+
+Install NPM dependencies:
+```bash
+@radix-ui/react-slot, class-variance-authority, @radix-ui/react-label
+```
+
+Implementation Guidelines
+ 1. Analyze the component structure and identify all required dependencies
+ 2. Review the component's argumens and state
+ 3. Identify any required context providers or hooks and install them
+ 4. Questions to Ask
+ - What data/props will be passed to this component?
+ - Are there any specific state management requirements?
+ - Are there any required assets (images, icons, etc.)?
+ - What is the expected responsive behavior?
+ - What is the best place to use this component in the app?
+
+Steps to integrate
+ 0. Copy paste all the code above in the correct directories
+ 1. Install external dependencies
+ 2. Fill image assets with Unsplash stock images you know exist
+ 3. Use lucide-react icons for svgs or logos if component requires them

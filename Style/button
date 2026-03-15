@@ -1,0 +1,82 @@
+You are given a task to integrate an existing React component in the codebase
+
+The codebase should support:
+- shadcn project structure  
+- Tailwind CSS
+- Typescript
+
+If it doesn't, provide instructions on how to setup project via shadcn CLI, install Tailwind or Typescript.
+
+Determine the default path for components and styles. 
+If default path for components is not /components/ui, provide instructions on why it's important to create this folder
+Copy-paste this component to /components/ui folder:
+```tsx
+button-1.tsx
+
+
+
+
+export const Component = () => {
+
+
+  return (
+
+    <div className= "relative inline-flex items-center justify-center gap-4 group" >
+    <div
+    className="absolute inset-0 duration-1000 opacity-60 transitiona-all bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-md blur-lg filter group-hover:opacity-100 group-hover:duration-200"
+    > </div>
+    < a
+  role = "button"
+  className = "group relative inline-flex items-center justify-center text-base rounded-md bg-gray-900 px-8 py-2 text-lg font-semibold text-white transition-all duration-200 hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 hover:shadow-gray-600/30"
+  title = "payment"
+  href = "https://uicat.vercel.app/"
+  target = "_blank"
+    > Explore CAT UI < svg
+
+  viewBox = "0 0 10 10"
+  height = "10"
+  width = "10"
+  fill = "none"
+  className = "mt-0.5 ml-2 -mr-1 stroke-white stroke-2"
+    >
+    <path
+        d="M0 5h7"
+  className = "transition opacity-0 group-hover:opacity-100"
+    > </path>
+    < path
+  d = "M1 1l4 4-4 4"
+  className = "transition group-hover:translate-x-[3px]"
+    > </path>
+    < /svg>
+    < /a>
+    < /div>
+
+  );
+};
+
+
+demo.tsx
+import { Component } from "@/components/ui/button-1";
+
+export default function DemoOne() {
+  return <Component />;
+}
+
+```
+
+Implementation Guidelines
+ 1. Analyze the component structure and identify all required dependencies
+ 2. Review the component's argumens and state
+ 3. Identify any required context providers or hooks and install them
+ 4. Questions to Ask
+ - What data/props will be passed to this component?
+ - Are there any specific state management requirements?
+ - Are there any required assets (images, icons, etc.)?
+ - What is the expected responsive behavior?
+ - What is the best place to use this component in the app?
+
+Steps to integrate
+ 0. Copy paste all the code above in the correct directories
+ 1. Install external dependencies
+ 2. Fill image assets with Unsplash stock images you know exist
+ 3. Use lucide-react icons for svgs or logos if component requires them
