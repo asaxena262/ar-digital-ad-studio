@@ -1,0 +1,4 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/gmnfnice/public_html/ardigitalstudio/
+    - /bin/cp -R * $DEPLOYPATH
