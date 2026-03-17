@@ -1,0 +1,7 @@
+# robots.txt for ardigitaladstudio.com
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://ardigitaladstudio.com/sitemap.xml
