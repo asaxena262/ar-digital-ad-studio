@@ -1,4 +1,4 @@
 deployment:
   tasks:
-    - /bin/cp -R * "${DEPLOYPATH:?DEPLOYPATH is not set}"
-
+    - export DEPLOYPATH=/home/gmnfnice/repositories/ar-digital-ad-studio
+    - /bin/cp -R * "${DEPLOYPATH}"
