@@ -37,6 +37,42 @@
   .section-padding {
     padding-block: var(--space-2xl);
   }
+
+  /* Section headers */
+  .section-header__title {
+    font-size: var(--fs-2xl);
+  }
+
+  .section-header__desc {
+    font-size: var(--fs-sm);
+  }
+
+  /* Tables */
+  .table-wrapper {
+    margin-inline: calc(var(--space-md) * -1);
+    padding-inline: var(--space-md);
+    border-radius: 0;
+  }
+
+  .table {
+    font-size: var(--fs-xs);
+  }
+
+  .table th,
+  .table td {
+    padding: var(--space-xs) var(--space-sm);
+    white-space: normal;
+  }
+
+  /* Footer newsletter */
+  .footer__newsletter-form {
+    flex-direction: column;
+  }
+
+  .footer__newsletter-form input,
+  .footer__newsletter-form button {
+    width: 100%;
+  }
 }
 
 /* ============================================================
@@ -60,6 +96,11 @@
     display: flex;
   }
 
+  /* Hide Free Consultation button in mobile nav */
+  .navbar__mobile .btn-primary {
+    display: none;
+  }
+
   .navbar__logo {
     font-size: var(--fs-lg);
   }
@@ -71,10 +112,15 @@
 
   .hero__title {
     font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.15;
   }
 
   .hero__subtitle {
     font-size: var(--fs-base);
+  }
+
+  .hero__subtitle br {
+    display: none;
   }
 
   .hero__tag {
@@ -119,6 +165,20 @@
     font-size: var(--fs-xs);
   }
 
+  /* Section Headers */
+  .section-header {
+    margin-bottom: var(--space-xl);
+  }
+
+  .section-header__title {
+    font-size: var(--fs-2xl);
+    line-height: 1.2;
+  }
+
+  .section-header__desc {
+    font-size: var(--fs-sm);
+  }
+
   /* Services */
   .services-grid {
     grid-template-columns: 1fr;
@@ -129,18 +189,34 @@
     padding: var(--space-lg);
   }
 
+  .service-card__number {
+    font-size: var(--fs-4xl);
+  }
+
   /* USP */
   .usp-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-md);
   }
 
   .usp-card {
     padding: var(--space-lg);
   }
 
+  /* Mission Vision Grid */
+  .mission-vision-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
   /* Testimonials */
+  .testimonials__track {
+    gap: var(--space-md);
+  }
+
   .testimonial-card {
     padding: var(--space-lg);
+    min-width: 85vw;
   }
 
   .testimonial-card::before {
@@ -159,10 +235,19 @@
   /* Contact form */
   .form-row {
     grid-template-columns: 1fr;
+    gap: var(--space-md);
   }
 
   .contact-form {
-    padding-inline: var(--space-md);
+    padding-inline: 0;
+  }
+
+  .contact-form-card {
+    padding: var(--space-lg);
+  }
+
+  .contact-info__title {
+    font-size: var(--fs-xl);
   }
 
   /* Team */
@@ -191,6 +276,16 @@
     justify-content: center;
   }
 
+  .footer__address {
+    text-align: left;
+    display: inline-block;
+  }
+
+  .footer__contact-item {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
   .footer__bottom {
     flex-direction: column;
     text-align: center;
@@ -203,29 +298,74 @@
     gap: var(--space-md);
   }
 
-  /* Section headers */
-  .section-header {
-    margin-bottom: var(--space-2xl);
+  .footer__bottom-links span {
+    font-size: var(--fs-xs);
+    line-height: 1.6;
   }
 
+  .footer__newsletter {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-lg);
+  }
+
+  .footer__newsletter-form {
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .footer__newsletter-form input,
+  .footer__newsletter-form button {
+    width: 100%;
+  }
+
+  /* Section spacing */
   .section-padding {
     padding-block: var(--space-3xl);
   }
 
   /* Accordion */
   .accordion__trigger {
-    font-size: var(--fs-base);
+    font-size: var(--fs-sm);
     padding: var(--space-md) 0;
+    padding-right: var(--space-xl);
+    text-align: left;
+  }
+
+  .accordion__content p {
+    font-size: var(--fs-sm);
   }
 
   /* Table */
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-inline: calc(var(--space-md) * -1);
+    padding-inline: var(--space-md);
+  }
+
+  .table {
+    min-width: 500px;
+  }
+
   .table th,
   .table td {
     padding: var(--space-sm) var(--space-md);
     font-size: var(--fs-xs);
+    white-space: nowrap;
   }
 
   /* CTA banner */
+  .cta-banner__title {
+    font-size: var(--fs-2xl);
+  }
+
+  .cta-banner__desc {
+    font-size: var(--fs-sm);
+  }
+
   .cta-banner__buttons {
     flex-direction: column;
     width: 100%;
@@ -243,6 +383,76 @@
 
   .timeline__item {
     padding-left: var(--space-md);
+  }
+
+  /* Release Timeline */
+  .release-timeline {
+    gap: var(--space-md);
+  }
+
+  .release-timeline__item {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .release-timeline__meta {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-sm);
+    width: 100%;
+  }
+
+  .release-timeline__card {
+    padding: var(--space-lg);
+  }
+
+  .release-timeline__title {
+    font-size: var(--fs-base);
+  }
+
+  .release-timeline__desc {
+    font-size: var(--fs-sm);
+  }
+
+  .release-timeline__items li {
+    font-size: var(--fs-sm);
+  }
+
+  /* Tools Marquee */
+  .tools-marquee {
+    padding: var(--space-md) 0;
+  }
+
+  .tools-marquee__label {
+    font-size: var(--fs-xs);
+  }
+
+  .tools-marquee__item {
+    padding: var(--space-xs) var(--space-sm);
+    gap: var(--space-xs);
+  }
+
+  .tools-marquee__item-name {
+    font-size: var(--fs-xs);
+  }
+
+  .tools-marquee__item-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* About intro */
+  .about-intro__text {
+    font-size: var(--fs-base);
+  }
+
+  .about-intro__subtext {
+    font-size: var(--fs-sm);
+  }
+
+  /* SMM grid */
+  [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
   }
 
   /* WhatsApp */
@@ -291,6 +501,12 @@
   .hero__grid-overlay {
     background-size: 40px 40px;
   }
+
+  /* Hide br on mobile for better text flow */
+  .hero__title br,
+  .section-header__title br {
+    display: none;
+  }
 }
 
 /* ============================================================
@@ -310,13 +526,27 @@
     display: flex;
   }
 
+  /* Hide Free Consultation button in mobile nav */
+  .navbar__mobile .btn-primary {
+    display: none;
+  }
+
   /* Hero */
   .hero__title {
     font-size: clamp(2.5rem, 7vw, 3.5rem);
+    line-height: 1.15;
+  }
+
+  .hero__title br {
+    display: none;
   }
 
   .hero__subtitle {
     font-size: var(--fs-base);
+  }
+
+  .hero__subtitle br {
+    display: none;
   }
 
   .hero__buttons {
@@ -332,19 +562,37 @@
     display: none;
   }
 
+  /* Section Headers */
+  .section-header__title {
+    font-size: var(--fs-3xl);
+  }
+
   /* Services */
   .services-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-lg);
   }
 
   /* USP */
   .usp-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+
+  /* Mission Vision Grid */
+  .mission-vision-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
   }
 
   /* Testimonials */
+  .testimonials__track {
+    gap: var(--space-lg);
+  }
+
   .testimonial-card {
     padding: var(--space-xl) var(--space-lg);
+    min-width: 80vw;
   }
 
   /* Team */
@@ -357,15 +605,40 @@
     grid-template-columns: 1fr;
   }
 
-  /* Contact form */
+  /* Contact */
+  .contact-split {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .contact-info {
+    position: static;
+  }
+
+  .contact-form-card {
+    padding: var(--space-xl);
+  }
+
+  /* Form */
   .form-row {
     grid-template-columns: 1fr;
+    gap: var(--space-md);
   }
 
   /* Footer */
   .footer__top {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-2xl);
+    text-align: left;
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .footer__socials {
+    justify-content: center;
   }
 
   .footer__bottom {
@@ -377,9 +650,64 @@
     justify-content: center;
   }
 
+  .footer__newsletter {
+    flex-direction: column;
+    gap: var(--space-md);
+    text-align: center;
+  }
+
+  .footer__newsletter-form {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
   /* Section spacing */
   .section-padding {
     padding-block: var(--space-3xl);
+  }
+
+  /* Accordion */
+  .accordion__trigger {
+    font-size: var(--fs-base);
+    padding-right: var(--space-xl);
+  }
+
+  /* Table */
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* CTA */
+  .cta-banner__title {
+    font-size: var(--fs-3xl);
+  }
+
+  .cta-banner__buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Release Timeline */
+  .release-timeline__item {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .release-timeline__meta {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  /* Tools Marquee */
+  .tools-marquee__item {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  /* SMM Grid override */
+  [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
   }
 
   /* Marquee ticker */

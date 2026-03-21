@@ -1236,11 +1236,23 @@ p {
   font-size: var(--fs-sm);
   color: var(--clr-muted);
   margin-bottom: var(--space-md);
+  line-height: 1.5;
+}
+
+.footer__contact-item a {
+  color: var(--clr-muted);
+  transition: color var(--transition-fast);
+  word-break: break-word;
+}
+
+.footer__contact-item a:hover {
+  color: var(--clr-accent);
 }
 
 .footer__contact-item i {
   color: var(--clr-accent);
   margin-top: 3px;
+  flex-shrink: 0;
 }
 
 .footer__bottom {
@@ -2242,6 +2254,24 @@ textarea.form-control {
 }
 
 /* ============================================================
+   43b. SMM GRID
+   ============================================================ */
+.smm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .smm-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+/* ============================================================
    44. RELEASE TIMELINE — Card-Based (Inspired by ReleaseTimeLine)
    ============================================================ */
 .release-timeline {
@@ -2695,7 +2725,12 @@ textarea.form-control {
   margin-top: var(--space-lg);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: var(--space-2xl);
+}
+
+.footer__newsletter-content {
+  flex-shrink: 0;
 }
 
 .footer__newsletter h4 {
@@ -2704,12 +2739,14 @@ textarea.form-control {
   font-weight: var(--fw-semibold);
   color: var(--clr-text);
   white-space: nowrap;
+  margin-bottom: var(--space-xs);
 }
 
 .footer__newsletter p {
   font-size: var(--fs-sm);
   color: var(--clr-muted);
   white-space: nowrap;
+  margin: 0;
 }
 
 .footer__newsletter-form {
@@ -2720,6 +2757,14 @@ textarea.form-control {
   margin-left: auto;
 }
 
+.footer__address {
+  font-style: normal;
+}
+
+.footer__contact {
+  min-width: 0;
+}
+
 @media (max-width: 768px) {
   .footer__newsletter {
     flex-direction: column;
@@ -2727,6 +2772,9 @@ textarea.form-control {
     gap: var(--space-md);
     text-align: center;
     padding: var(--space-lg);
+  }
+  .footer__newsletter-content {
+    flex-shrink: initial;
   }
   .footer__newsletter h4,
   .footer__newsletter p {
