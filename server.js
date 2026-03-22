@@ -112,25 +112,35 @@ function handleWebhook(req, res) {
 
     console.log('[webhook] Push to main received — deploying...');
 
-    // Respond immediately so GitHub doesn't time out
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Deploy triggered');
+    // Respond immediately so GitHub doesn't time out waiting
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ status: 'deploy triggered', time: new Date().toISOString() }));
 
-    // Pull latest code, then reload PM2 (if running) or just log
-    const deployCmd = [
+    // ── cPanel / Passenger deploy flow ───────────────────
+    // 1. Pull latest code from GitHub
+    // 2. Install any new npm packages
+    // 3. Touch tmp/restart.txt — Passenger detects this file
+    //    and gracefully restarts the Node.js app automatically
+    const appDir = __dirname;
+    const steps = [
+      // Ensure git knows the safe directory (cPanel shared hosting quirk)
+      `git config --global --add safe.directory ${appDir}`,
+      // Pull latest code
       'git fetch origin main',
       'git reset --hard origin/main',
+      // Install new packages if package.json changed (silent, non-fatal)
       'npm install --production --silent 2>/dev/null || true',
-      // Reload PM2 if it's managing this process; fall back gracefully
-      'pm2 reload ar-digital --update-env 2>/dev/null || true',
+      // Signal Passenger to restart the Node.js app
+      'mkdir -p tmp && touch tmp/restart.txt',
     ].join(' && ');
 
-    exec(deployCmd, { cwd: __dirname }, (err, stdout, stderr) => {
+    exec(steps, { cwd: appDir, env: { ...process.env, HOME: process.env.HOME || '/home/gmnfnice' } }, (err, stdout, stderr) => {
       if (err) {
-        console.error('[deploy] Error:', err.message);
-        console.error('[deploy] stderr:', stderr);
+        console.error('[deploy] Failed:', err.message);
+        if (stderr) console.error('[deploy] stderr:', stderr.trim());
       } else {
-        console.log('[deploy] Success:', stdout.trim());
+        console.log('[deploy] ✓ Deployed successfully');
+        if (stdout.trim()) console.log('[deploy]', stdout.trim());
       }
     });
   });
