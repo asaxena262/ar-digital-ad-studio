@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# post-merge — runs automatically after every successful `git pull`
+# Syncs repository files to the local deploy path.
+#
+# Override the destination at any time by setting DEPLOYPATH in your environment:
+#   DEPLOYPATH=/some/other/path git pull
+
+set -e
+
+DEPLOYPATH="${DEPLOYPATH:-/home/gmnfnice/repositories/ar-digital-ad-studio}"
+
+mkdir -p "$DEPLOYPATH"
+rsync -a --exclude='.git' ./ "$DEPLOYPATH/"
+
+echo "Deployed to $DEPLOYPATH"
