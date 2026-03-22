@@ -179,6 +179,7 @@ body {
   animation: spin 0.75s linear infinite;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
+.spin-icon { animation: spin 0.75s linear infinite; flex-shrink: 0; }
 
 /* ============================================================
    8. NAVBAR
@@ -1019,7 +1020,19 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 }
 .whatsapp-float:hover { transform: scale(1.08); }
 .whatsapp-float svg { width: 26px; height: 26px; }
-.whatsapp-float__pulse { display: none; }
+.whatsapp-float__pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #25D366;
+  animation: wa-pulse 2s ease-out infinite;
+  z-index: -1;
+}
+@keyframes wa-pulse {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  70%  { transform: scale(1.6); opacity: 0; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
 
 .back-to-top {
   position: fixed;
