@@ -1,762 +1,103 @@
 /* ============================================================
    AR Digital Ad Studio — Animations
-   Scroll reveals · Hover effects · Keyframes
    ============================================================ */
 
-/* ============================================================
-   1. SMOOTH SCROLL BEHAVIOR
-   ============================================================ */
-html {
-  scroll-behavior: smooth;
+/* --- Core keyframes --- */
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
-
-/* ============================================================
-   2. FADE-IN ON SCROLL — Base setup
-   ============================================================ */
-[data-animate] {
-  opacity: 0;
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
+@keyframes pulse-dot {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%      { opacity:.6; transform:scale(.8); }
 }
-
-[data-animate].in-view {
-  opacity: 1;
-  transform: translate(0, 0) scale(1);
+@keyframes scroll-line {
+  from { opacity:.4; }
+  to   { opacity:1; }
 }
-
-/* Stagger children delay */
-[data-animate-stagger] > * {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-[data-animate-stagger].in-view > *:nth-child(1) { transition-delay: 0s;    }
-[data-animate-stagger].in-view > *:nth-child(2) { transition-delay: 0.1s;  }
-[data-animate-stagger].in-view > *:nth-child(3) { transition-delay: 0.2s;  }
-[data-animate-stagger].in-view > *:nth-child(4) { transition-delay: 0.3s;  }
-[data-animate-stagger].in-view > *:nth-child(5) { transition-delay: 0.4s;  }
-[data-animate-stagger].in-view > *:nth-child(6) { transition-delay: 0.5s;  }
-[data-animate-stagger].in-view > *:nth-child(7) { transition-delay: 0.6s;  }
-[data-animate-stagger].in-view > *:nth-child(8) { transition-delay: 0.7s;  }
-
-[data-animate-stagger].in-view > * {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ---- Fade Up ---- */
-[data-animate="fade-up"] {
-  transform: translateY(40px);
-}
-
-/* ---- Fade Down ---- */
-[data-animate="fade-down"] {
-  transform: translateY(-40px);
-}
-
-/* ---- Fade Left ---- */
-[data-animate="fade-left"] {
-  transform: translateX(40px);
-}
-
-/* ---- Fade Right ---- */
-[data-animate="fade-right"] {
-  transform: translateX(-40px);
-}
-
-/* ---- Fade In (no movement) ---- */
-[data-animate="fade-in"] {
-  transform: scale(0.97);
-}
-
-/* ---- Zoom In ---- */
-[data-animate="zoom-in"] {
-  transform: scale(0.85);
-}
-
-/* ---- Delay modifiers ---- */
-[data-animate-delay="100"] { transition-delay: 0.1s; }
-[data-animate-delay="200"] { transition-delay: 0.2s; }
-[data-animate-delay="300"] { transition-delay: 0.3s; }
-[data-animate-delay="400"] { transition-delay: 0.4s; }
-[data-animate-delay="500"] { transition-delay: 0.5s; }
-[data-animate-delay="600"] { transition-delay: 0.6s; }
-[data-animate-delay="700"] { transition-delay: 0.7s; }
-[data-animate-delay="800"] { transition-delay: 0.8s; }
-
-/* ---- Duration modifiers ---- */
-[data-animate-duration="fast"] {
-  transition-duration: 0.4s;
-}
-
-[data-animate-duration="slow"] {
-  transition-duration: 1s;
-}
-
-/* ============================================================
-   3. HERO TEXT ENTRANCE ANIMATIONS
-   ============================================================ */
-@keyframes heroTagEntrance {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes heroTitleEntrance {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-    filter: blur(6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
-}
-
-@keyframes heroSubtitleEntrance {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes heroButtonEntrance {
-  from {
-    opacity: 0;
-    transform: translateY(20px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.hero__tag {
-  animation: heroTagEntrance 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
-}
-
-.hero__title {
-  animation: heroTitleEntrance 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
-}
-
-.hero__subtitle {
-  animation: heroSubtitleEntrance 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both;
-}
-
-.hero__buttons {
-  animation: heroButtonEntrance 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both;
-}
-
-/* ============================================================
-   4. GRADIENT TEXT SHIMMER
-   ============================================================ */
-@keyframes gradientShimmer {
-  0%   { background-position: 200% center; }
-  100% { background-position: -200% center; }
-}
-
-.gradient-text {
-  animation: gradientShimmer 6s linear infinite;
-}
-
-/* ============================================================
-   5. COUNTER ANIMATION KEYFRAMES
-   ============================================================ */
-@keyframes counterPop {
-  0% {
-    opacity: 0;
-    transform: scale(0.6) translateY(20px);
-  }
-  60% {
-    transform: scale(1.08) translateY(-4px);
-  }
-  80% {
-    transform: scale(0.97) translateY(2px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-.stat-item.in-view .stat-item__number {
-  animation: counterPop 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.stat-item.in-view:nth-child(1) .stat-item__number { animation-delay: 0s;   }
-.stat-item.in-view:nth-child(2) .stat-item__number { animation-delay: 0.15s; }
-.stat-item.in-view:nth-child(3) .stat-item__number { animation-delay: 0.3s;  }
-.stat-item.in-view:nth-child(4) .stat-item__number { animation-delay: 0.45s; }
-
-/* Number "tick up" pulse */
-@keyframes counterTick {
-  0%, 100% { opacity: 1; }
-  50%      { opacity: 0.6; }
-}
-
-.stat-item__number.counting {
-  animation: counterTick 0.08s steps(1) infinite;
-}
-
-/* ============================================================
-   6. LOGO CAROUSEL SCROLL ANIMATION
-   ============================================================ */
-@keyframes carouselScrollLeft {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
-@keyframes carouselScrollRight {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
-}
-
-.logo-carousel__track--left {
-  animation: carouselScrollLeft 30s linear infinite;
-}
-
-.logo-carousel__track--right {
-  animation: carouselScrollRight 30s linear infinite;
-}
-
-.logo-carousel__track--left:hover,
-.logo-carousel__track--right:hover {
-  animation-play-state: paused;
-}
-
-/* ============================================================
-   7. CARD HOVER LIFT + GLOW EFFECTS
-   ============================================================ */
-@keyframes cardGlow {
-  0%   { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0);   }
-  50%  { box-shadow: 0 0 30px 0 rgba(255, 107, 53, 0.15); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0);   }
-}
-
-.service-card:hover,
-.usp-card:hover,
-.team-card:hover {
-  animation: cardGlow 2s ease-in-out;
-}
-
-/* Subtle pulse on hover for icon containers */
-@keyframes iconPulse {
-  0%, 100% { transform: scale(1); }
-  50%      { transform: scale(1.1); }
-}
-
-.service-card:hover .service-card__icon {
-  animation: iconPulse 1.5s ease-in-out infinite;
-}
-
-/* ============================================================
-   8. FLOATING SHAPES BACKGROUND ANIMATION
-   ============================================================ */
-@keyframes floatShape1 {
-  0%, 100% {
-    transform: translate(0, 0) rotate(0deg);
-    opacity: 0.06;
-  }
-  25% {
-    transform: translate(30px, -40px) rotate(90deg);
-    opacity: 0.1;
-  }
-  50% {
-    transform: translate(-20px, -80px) rotate(180deg);
-    opacity: 0.04;
-  }
-  75% {
-    transform: translate(40px, -30px) rotate(270deg);
-    opacity: 0.08;
-  }
-}
-
-@keyframes floatShape2 {
-  0%, 100% {
-    transform: translate(0, 0) rotate(0deg) scale(1);
-  }
-  33% {
-    transform: translate(-50px, 30px) rotate(120deg) scale(1.2);
-  }
-  66% {
-    transform: translate(30px, -50px) rotate(240deg) scale(0.8);
-  }
-}
-
-@keyframes floatShape3 {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-60px) rotate(180deg);
-  }
-}
-
-.floating-shapes {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.floating-shape {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.06;
-}
-
-.floating-shape:nth-child(1) {
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(255, 107, 53, 0.3) 0%, transparent 70%);
-  top: 10%;
-  left: 5%;
-  animation: floatShape1 20s ease-in-out infinite;
-}
-
-.floating-shape:nth-child(2) {
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, rgba(255, 107, 53, 0.2) 0%, transparent 70%);
-  top: 60%;
-  right: 10%;
-  animation: floatShape2 25s ease-in-out infinite;
-}
-
-.floating-shape:nth-child(3) {
-  width: 150px;
-  height: 150px;
-  background: radial-gradient(circle, rgba(26, 26, 46, 0.6) 0%, transparent 70%);
-  bottom: 20%;
-  left: 40%;
-  animation: floatShape3 18s ease-in-out infinite;
-}
-
-.floating-shape:nth-child(4) {
-  width: 100px;
-  height: 100px;
-  background: radial-gradient(circle, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
-  top: 30%;
-  right: 30%;
-  animation: floatShape1 22s ease-in-out infinite reverse;
-}
-
-/* ============================================================
-   9. SLIDE TRANSITIONS
-   ============================================================ */
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideOutLeft {
-  from {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(-60px);
-  }
-}
-
-@keyframes slideOutRight {
-  from {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(60px);
-  }
-}
-
-/* Utility classes for slide transitions */
-.slide-in-left  { animation: slideInLeft  0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
-.slide-in-right { animation: slideInRight 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
-.slide-in-up    { animation: slideInUp    0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
-.slide-in-down  { animation: slideInDown  0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
-
-/* Testimonial slide transitions */
-.testimonials__track.slide-left {
-  animation: slideOutLeft 0.4s ease forwards;
-}
-
-.testimonials__track.slide-right {
-  animation: slideOutRight 0.4s ease forwards;
-}
-
-/* ============================================================
-   10. ACCORDION OPEN / CLOSE
-   ============================================================ */
-.accordion__content {
-  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              padding 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 0.3s ease;
-  opacity: 0;
-}
-
-.accordion__item.active .accordion__content {
-  opacity: 1;
-}
-
-.accordion__icon::after {
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 0.25s ease;
-}
-
-.accordion__trigger {
-  transition: color 0.2s ease, padding 0.3s ease;
-}
-
-/* ============================================================
-   11. STATS COUNTER POP EFFECT
-   ============================================================ */
-@keyframes statLabelReveal {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.stat-item.in-view .stat-item__label {
-  animation: statLabelReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
-}
-
-.stat-item.in-view:nth-child(1) .stat-item__label { animation-delay: 0.15s; }
-.stat-item.in-view:nth-child(2) .stat-item__label { animation-delay: 0.3s;  }
-.stat-item.in-view:nth-child(3) .stat-item__label { animation-delay: 0.45s; }
-.stat-item.in-view:nth-child(4) .stat-item__label { animation-delay: 0.6s;  }
-
-/* ============================================================
-   12. BUTTON RIPPLE EFFECT
-   ============================================================ */
-@keyframes btnRipple {
-  0% {
-    transform: scale(0);
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
-
-.btn .ripple {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  animation: btnRipple 0.6s ease-out forwards;
-  pointer-events: none;
-}
-
-/* ============================================================
-   13. NAVBAR SCROLL TRANSITION
-   ============================================================ */
-.navbar {
-  transition: background 0.4s ease,
-              box-shadow 0.4s ease,
-              height 0.3s ease;
-}
-
-.navbar.scrolled {
-  height: 64px;
-}
-
-/* ============================================================
-   14. PAGE TRANSITION
-   ============================================================ */
-@keyframes pageEnter {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.page-transition {
-  animation: pageEnter 0.5s ease both;
-}
-
-/* ============================================================
-   15. TYPEWRITER CURSOR
-   ============================================================ */
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%      { opacity: 0; }
-}
-
-.typewriter-cursor {
-  display: inline-block;
-  width: 3px;
-  height: 1em;
-  background: var(--clr-accent);
-  margin-left: 4px;
-  animation: blink 0.8s step-end infinite;
-  vertical-align: text-bottom;
-}
-
-/* ============================================================
-   16. WHATSAPP BOUNCE
-   ============================================================ */
-@keyframes whatsappBounce {
-  0%, 100% { transform: translateY(0); }
-  25%      { transform: translateY(-6px); }
-  50%      { transform: translateY(0); }
-  75%      { transform: translateY(-3px); }
-}
-
-.whatsapp-float {
-  animation: whatsappBounce 3s ease-in-out 5s infinite;
-}
-
-/* ============================================================
-   17. PRELOADER FADE OUT
-   ============================================================ */
-@keyframes preloaderOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-.preloader.loaded {
-  animation: preloaderOut 0.5s ease 0.2s forwards;
-}
-
-/* ============================================================
-   18. MARQUEE / INFINITE SCROLL TEXT
-   ============================================================ */
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from { transform:translateX(0); }
+  to   { transform:translateX(-50%); }
+}
+@keyframes page-fade-in {
+  from { opacity:0; }
+  to   { opacity:1; }
 }
 
-.marquee__track {
-  display: flex;
-  width: max-content;
-  animation: marquee 20s linear infinite;
+/* --- Hero entrance --- */
+@keyframes hero-word-up {
+  from { opacity:0; transform:translateY(36px) skewY(3deg); filter:blur(4px); }
+  to   { opacity:1; transform:translateY(0)    skewY(0);    filter:blur(0); }
+}
+@keyframes hero-sub-in {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes hero-btn-in {
+  from { opacity:0; transform:translateY(14px) scale(0.97); }
+  to   { opacity:1; transform:translateY(0)    scale(1); }
+}
+@keyframes hero-tag-in {
+  from { opacity:0; transform:translateY(-12px) scale(0.95); }
+  to   { opacity:1; transform:translateY(0)     scale(1); }
 }
 
-.marquee__track:hover {
-  animation-play-state: paused;
+/* --- Scroll-reveal variants --- */
+@keyframes fade-up {
+  from { opacity:0; transform:translateY(24px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes fade-left {
+  from { opacity:0; transform:translateX(28px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+@keyframes fade-right {
+  from { opacity:0; transform:translateX(-28px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+@keyframes scale-in {
+  from { opacity:0; transform:scale(0.93); }
+  to   { opacity:1; transform:scale(1); }
+}
+@keyframes stagger-in {
+  from { opacity:0; transform:translateY(16px) scale(0.98); }
+  to   { opacity:1; transform:translateY(0)    scale(1); }
 }
 
-/* ============================================================
-   19. REDUCED MOTION PREFERENCE
-   ============================================================ */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-
-  [data-animate] {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  .logo-carousel__track--left,
-  .logo-carousel__track--right,
-  .marquee__track,
-  .marquee-ticker__track {
-    animation: none !important;
-  }
+/* --- Ambient / looping --- */
+@keyframes float {
+  0%,100% { transform:translateY(0); }
+  50%     { transform:translateY(-10px); }
 }
-
-/* ============================================================
-   20. TILT CARD EFFECT (3D)
-   ============================================================ */
-.tilt-card {
-  transform-style: preserve-3d;
-  perspective: 800px;
+@keyframes glow-pulse {
+  0%,100% { box-shadow:0 0 20px rgba(255,107,53,.2); }
+  50%     { box-shadow:0 0 40px rgba(255,107,53,.5), 0 0 60px rgba(255,107,53,.15); }
 }
-
-.tilt-card__inner {
-  transition: transform 0.3s ease;
-  transform-style: preserve-3d;
+@keyframes border-pulse {
+  0%,100% { border-color:rgba(255,107,53,.25); }
+  50%     { border-color:rgba(255,107,53,.65); }
 }
-
-/* ============================================================
-   21. STAGGER FADE UP — Smooth entrance for grids
-   ============================================================ */
-@keyframes staggerFadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes shimmer {
+  0%   { background-position:200% center; }
+  100% { background-position:-200% center; }
 }
-
-/* ============================================================
-   22. GLOW PULSE — For accent elements
-   ============================================================ */
-@keyframes glowPulse {
-  0%, 100% {
-    box-shadow: 0 0 5px rgba(255, 107, 53, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(255, 107, 53, 0.4), 0 0 40px rgba(255, 107, 53, 0.15);
-  }
+@keyframes dot-blink {
+  0%,100% { transform:scale(1); background:var(--clr-accent); }
+  50%     { transform:scale(1.6); background:#ff9a6c; }
 }
-
-.hero__tag-dot {
-  animation: glowPulse 2s ease-in-out infinite;
+@keyframes nav-in {
+  from { opacity:0; transform:translateY(-20px); }
+  to   { opacity:1; transform:translateY(0); }
 }
-
-/* ============================================================
-   23. TEXT REVEAL — Characters slide up
-   ============================================================ */
-@keyframes textReveal {
-  from {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes stat-pop {
+  0%   { opacity:0; transform:scale(.8) translateY(10px); }
+  70%  { transform:scale(1.05) translateY(-2px); }
+  100% { opacity:1; transform:scale(1) translateY(0); }
 }
-
-/* ============================================================
-   24. SCALE BOUNCE — Subtle pop in
-   ============================================================ */
-@keyframes scaleBounce {
-  0% { transform: scale(0.9); opacity: 0; }
-  60% { transform: scale(1.03); opacity: 1; }
-  100% { transform: scale(1); opacity: 1; }
+@keyframes line-grow {
+  from { transform:scaleX(0); }
+  to   { transform:scaleX(1); }
 }
-
-/* ============================================================
-   25. SMOOTH UNDERLINE DRAW
-   ============================================================ */
-@keyframes drawUnderline {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-/* ============================================================
-   26. FLOATING ANIMATION — Gentle float
-   ============================================================ */
-@keyframes gentleFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.usp-card__icon {
-  animation: gentleFloat 3s ease-in-out infinite;
-  animation-play-state: paused;
-}
-
-.usp-card:hover .usp-card__icon {
-  animation-play-state: running;
-}
-
-/* ============================================================
-   27. NUMBER COUNT GLOW
-   ============================================================ */
-@keyframes numberGlow {
-  0%, 100% { text-shadow: 0 0 10px rgba(255, 107, 53, 0.2); }
-  50% { text-shadow: 0 0 25px rgba(255, 107, 53, 0.5), 0 0 50px rgba(255, 107, 53, 0.2); }
-}
-
-.stat-item.in-view .stat-item__number {
-  animation: counterPop 0.7s cubic-bezier(0.16, 1, 0.3, 1) both,
-             numberGlow 3s ease-in-out infinite 1s;
-}
-
-/* ============================================================
-   28. ACCORDION ARROW ROTATION
-   ============================================================ */
-.accordion__item.active .accordion__trigger {
-  color: var(--clr-accent);
-}
-
-/* ============================================================
-   29. CARD ENTRANCE WITH BLUR
-   ============================================================ */
-@keyframes cardBlurEntrance {
-  from {
-    opacity: 0;
-    filter: blur(8px);
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateY(0);
-  }
-}
-
-/* ============================================================
-   30. SCROLL LINE PARALLAX
-   ============================================================ */
-.hero__scroll-indicator {
-  animation: gentleFloat 3s ease-in-out infinite;
+@keyframes accent-flicker {
+  0%,100% { opacity:1; }
+  50%     { opacity:.7; }
 }

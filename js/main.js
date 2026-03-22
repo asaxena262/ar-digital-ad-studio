@@ -1,7 +1,7 @@
 /* ============================================================
    AR Digital Ad Studio — Main JavaScript
-   Theme Toggle, Navigation, Scroll Animations, Testimonials,
-   Accordion, Counter, Preloader, Back to Top
+   Navigation, Animations, Testimonials, Accordion, Counter,
+   Back to Top
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {

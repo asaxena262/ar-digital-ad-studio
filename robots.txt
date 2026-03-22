@@ -1,37 +1,27 @@
 # Robots.txt for AR Digital Ad Studio
-# Allow search engines to crawl the website
+# Website: https://ardigitaladstudio.in
 
 User-agent: *
 Allow: /
-Allow: /sitemap.xml
-Allow: /sitemap-*.xml
-
-# Disallow private directories
 Disallow: /admin/
 Disallow: /private/
 Disallow: /uploads/tmp/
-Disallow: /*.json$
+
+# WordPress paths (not applicable but blocked as a precaution)
 Disallow: /wp-admin/
 Disallow: /wp-includes/
-Disallow: /wp-content/plugins/
-Disallow: /wp-content/themes/
 
-# Crawl delay (in seconds)
+# Crawl delay
 Crawl-delay: 1
 
-# Request rate limit
-Request-rate: 1/10s
-
-# Sitemaps
+# Sitemap
 Sitemap: https://ardigitaladstudio.in/sitemap.xml
-Sitemap: https://ardigitaladstudio.in/sitemap-pages.xml
-Sitemap: https://ardigitaladstudio.in/sitemap-services.xml
 
-# Specific rules for Google
+# Googlebot — full access
 User-agent: Googlebot
 Allow: /
 
-# Specific rules for Bing
+# Bingbot — full access
 User-agent: Bingbot
 Allow: /
 
@@ -39,8 +29,5 @@ Allow: /
 User-agent: MJ12bot
 Disallow: /
 
-User-agent: AhrefsBot
-Disallow: /
-
-User-agent: SemrushBot
+User-agent: DotBot
 Disallow: /
