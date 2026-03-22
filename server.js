@@ -156,6 +156,13 @@ const server = http.createServer((req, res) => {
     return handleWebhook(req, res);
   }
 
+  // ── 301 redirects ─────────────────────────────────────
+  // Move old blog post URL → /blog/ subdirectory
+  if (urlPath === '/best-digital-marketing-agency-in-pilibhit') {
+    res.writeHead(301, { Location: '/blog/best-digital-marketing-agency-in-pilibhit' });
+    return res.end();
+  }
+
   // ── Root → index.html ─────────────────────────────────
   if (urlPath === '/') {
     return serveFile(res, path.join(__dirname, 'index.html'));

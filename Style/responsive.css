@@ -18,6 +18,10 @@
   .stat-item:nth-child(2) { border-right: none; }
   .stat-item:nth-child(3) { border-top: 1px solid var(--clr-border); }
   .stat-item:nth-child(4) { border-top: 1px solid var(--clr-border); }
+
+  /* Blog post — stack article + sidebar */
+  .blog-post-grid { grid-template-columns: 1fr; gap: 40px; }
+  .blog-sidebar   { position: static; }
 }
 
 /* ---- Mobile (≤600px) ---- */
@@ -32,8 +36,6 @@
   .services-grid   { grid-template-columns: 1fr; }
   .form-row        { grid-template-columns: 1fr; }
   .footer__top     { grid-template-columns: 1fr; }
-  .footer__newsletter { flex-direction: column; }
-  .footer__newsletter-form { width: 100%; }
   .footer__bottom  { flex-direction: column; gap: var(--space-sm); text-align: center; }
   .cta-banner__buttons { flex-direction: column; width: 100%; }
   .cta-banner__buttons .btn { width: 100%; justify-content: center; }
@@ -45,10 +47,34 @@
   .release-timeline::before { display: none; }
   .release-timeline__item { grid-template-columns: 1fr; gap: var(--space-xs); }
   .release-timeline__meta { flex-direction: row; align-items: center; }
+
+  /* Footer newsletter — stack input + button vertically */
+  .footer__newsletter { flex-direction: column; align-items: stretch; padding: var(--space-md); }
+  .footer__newsletter-form {
+    min-width: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer__newsletter-form input { width: 100%; }
+  .footer__newsletter-form button { width: 100%; }
+
+  /* Blog mobile */
+  .blog-post-grid  { grid-template-columns: 1fr; gap: 32px; }
+  .blog-sidebar    { position: static; }
+  .blog-cta-box    { padding: 24px 20px; }
+  .blog-cta-btns   { flex-direction: column; }
+  .blog-cta-btns .btn { width: 100%; justify-content: center; }
+  .blog-highlight-grid { grid-template-columns: 1fr; }
+  .blog-stats-row  { grid-template-columns: 1fr 1fr; }
+  .blog-table      { min-width: 320px; font-size: 0.82rem; }
+  .blog-table td, .blog-table th { padding: 10px 10px; }
+  .blog-faq__item h3 { font-size: 0.95rem; }
 }
 
 /* ---- Small Mobile (≤380px) ---- */
 @media (max-width: 380px) {
   .hero__title { font-size: 1.9rem; }
   .usp-grid    { grid-template-columns: 1fr; }
+  .blog-stats-row { grid-template-columns: 1fr; }
 }
