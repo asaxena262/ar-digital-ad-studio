@@ -1,7 +1,7 @@
 /* ============================================================
    AR Digital Ad Studio — Main JavaScript
-   Theme Toggle, Navigation, Scroll Animations, Testimonials,
-   Accordion, Counter, Preloader, Back to Top
+   Navigation, Animations, Testimonials, Accordion, Counter,
+   Back to Top
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -275,39 +275,80 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ============================================================
-  // 11. CONTACT FORM (basic validation + feedback)
+  // 11. CONTACT FORM — fetch → /api/contact
   // ============================================================
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const name = document.getElementById('contact-name');
-      const email = document.getElementById('contact-email');
+      const nameEl    = document.getElementById('contact-name');
+      const emailEl   = document.getElementById('contact-email');
+      const phoneEl   = document.getElementById('contact-phone');
+      const serviceEl = document.getElementById('contact-service');
+      const msgEl     = document.getElementById('contact-message');
+      const btn       = contactForm.querySelector('button[type="submit"]');
 
-      if (!name.value.trim() || !email.value.trim()) {
-        alert('Please fill in all required fields.');
+      if (!nameEl.value.trim() || !emailEl.value.trim()) {
+        showFormMsg(contactForm, 'error', 'Please fill in your name and email.');
         return;
       }
 
-      // Simulate send
-      const btn = contactForm.querySelector('button[type="submit"]');
-      const originalText = btn.textContent;
-      btn.textContent = 'Sending...';
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = '<span style="display:inline-flex;align-items:center;gap:8px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="spin-icon"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>Sending…</span>';
       btn.disabled = true;
 
-      setTimeout(() => {
-        btn.textContent = '✓ Message Sent!';
-        btn.style.background = '#25D366';
-        contactForm.reset();
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name:    nameEl.value.trim(),
+            email:   emailEl.value.trim(),
+            phone:   phoneEl   ? phoneEl.value.trim()   : '',
+            service: serviceEl ? serviceEl.value.trim() : '',
+            message: msgEl     ? msgEl.value.trim()     : '',
+          }),
+        });
 
-        setTimeout(() => {
-          btn.textContent = originalText;
-          btn.style.background = '';
-          btn.disabled = false;
-        }, 3000);
-      }, 1500);
+        const json = await res.json().catch(() => ({}));
+
+        if (res.ok && json.ok) {
+          btn.innerHTML = '✓ Message Sent!';
+          btn.style.background = '#25D366';
+          showFormMsg(contactForm, 'success', "We've received your message! Check your inbox — we'll be in touch within 24 hours.");
+          contactForm.reset();
+          setTimeout(() => {
+            btn.innerHTML   = originalHTML;
+            btn.style.background = '';
+            btn.disabled    = false;
+          }, 5000);
+        } else {
+          throw new Error(json.error || 'Something went wrong.');
+        }
+      } catch (err) {
+        btn.innerHTML   = originalHTML;
+        btn.disabled    = false;
+        showFormMsg(contactForm, 'error', err.message || 'Could not send. Please call us directly: +91 92592 91668');
+      }
     });
+  }
+
+  function showFormMsg(form, type, text) {
+    let el = form.querySelector('.form-feedback');
+    if (!el) {
+      el = document.createElement('div');
+      el.className = 'form-feedback';
+      form.appendChild(el);
+    }
+    el.className = `form-feedback form-feedback--${type}`;
+    el.textContent = text;
+    el.style.cssText = `margin-top:14px;padding:13px 18px;border-radius:8px;font-size:14px;font-weight:500;line-height:1.5;${
+      type === 'success'
+        ? 'background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.3);color:#25D366;'
+        : 'background:rgba(255,80,80,0.1);border:1px solid rgba(255,80,80,0.3);color:#ff6b6b;'
+    }`;
+    setTimeout(() => { if (el.parentNode) el.remove(); }, 8000);
   }
 
   // ============================================================
